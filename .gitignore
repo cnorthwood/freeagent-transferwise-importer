@@ -1,0 +1,4 @@
+config.ini
+*.pyc
+*.pyo
+__pycache__
