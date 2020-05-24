@@ -44,7 +44,7 @@ class FreeAgent:
             f'{self._HOST}/v2/bank_transactions/statement',
             headers={'Authorization': f'Bearer {self._access_token}'},
             params={'bank_account': account_id},
-            data=transactions,
+            data={"statement": transactions},
         )
         response.raise_for_status()
 

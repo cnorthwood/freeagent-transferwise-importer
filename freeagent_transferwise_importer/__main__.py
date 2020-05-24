@@ -15,7 +15,7 @@ freeagent = FreeAgent(**config['freeagent'])
 account_id, currencies = transferwise.get_account_id_and_currencies()
 for currency in currencies:
     bank_account_id, last_updated = freeagent.get_or_create_bank_account(currency)
-    transactions = transferwise.get_transactions(account_id, currency)
+    transactions = transferwise.get_transactions(account_id, currency, last_updated)
     statement_file = StringIO()
     statement_csv = csv.writer(statement_file)
     for transaction in transactions:
